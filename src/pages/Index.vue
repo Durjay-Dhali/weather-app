@@ -34,7 +34,7 @@
     <template v-else>
       <div class="col column text-center text-white">
         <div class="col text-h2 text-weigth-thin">
-          Weather
+          Weather by Durjay
         </div>
         <q-btn
           @click="getLocation"
