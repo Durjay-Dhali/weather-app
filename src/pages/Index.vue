@@ -1,7 +1,7 @@
 <template>
   <q-page class="flex column" :class="bgClass">
     <div class="col q-pt-lg q-px-md">
-      <q-input @keyup.enter="getWeatherBySearch" v-model="search" placeholder="Search" dark borderless>
+      <q-input @keyup.enter="getWeatherBySearch" v-model="search" placeholder="Search" dark >
         <template v-slot:before>
           <q-icon
             @click="getLocation"
@@ -94,10 +94,8 @@ export default{
       })
     },
     getWeatherBySearch(){
-      this.$q.loading.show()
       this.$axios(`${ this.apiUrl }?q=${this.search}&appid=${ this.apiKey }&units=matric`).then(response =>{
         this.weatherData = response.data
-        this.$q.loading.hide()
       })
     }   
   }
